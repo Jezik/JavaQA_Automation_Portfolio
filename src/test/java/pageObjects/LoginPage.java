@@ -15,7 +15,11 @@ public class LoginPage extends BasePage {
     @FindBy(xpath = "//input[@data-qa='signup-email']")
     private WebElement inputNewEmail;
 
+    @FindBy(xpath = "//button[@data-qa='signup-button']")
+    private WebElement signupButton;
+
     public LoginPage() {
+        super();
         PageFactory.initElements(this.driver, this);
     }
 
@@ -23,11 +27,9 @@ public class LoginPage extends BasePage {
         return this.registrationHeader;
     }
 
-    public WebElement getInputNewName() {
-        return this.inputNewName;
-    }
-
-    public WebElement getInputNewEmail() {
-        return this.inputNewEmail;
+    public void registerNewUser(String username, String email) {
+        inputNewName.sendKeys(username);
+        inputNewEmail.sendKeys(email);
+        signupButton.click();
     }
 }
