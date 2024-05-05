@@ -11,13 +11,12 @@ public class MainPage extends BasePage {
     private WebElement loginLink;
 
     public MainPage() {
-        super();
         this.url = "https://www.automationexercise.com/";
-        PageFactory.initElements(this.driver, this);
+        PageFactory.initElements(driver, this);
     }
 
     public void openMainPage() {
-        this.driver.get(this.url);
+        driver.get(this.url);
     }
 
     public void goToLoginPage() {

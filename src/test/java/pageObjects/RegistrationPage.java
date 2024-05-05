@@ -10,8 +10,7 @@ public class RegistrationPage extends BasePage{
     private WebElement registrationHeader;
 
     public RegistrationPage() {
-        super();
-        PageFactory.initElements(this.driver, this);
+        PageFactory.initElements(driver, this);
     }
 
     public WebElement getRegistrationHeader() {

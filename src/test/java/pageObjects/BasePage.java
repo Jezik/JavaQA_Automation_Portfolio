@@ -1,16 +1,15 @@
 package pageObjects;
 
 import org.openqa.selenium.WebDriver;
-import stepsDefinitions.Hooks;
 
 abstract public class BasePage {
-    WebDriver driver;
+    protected static WebDriver driver;
 
-    public BasePage() {
-        this.driver = Hooks.getDriver();
+    public static void setDriver(WebDriver webDriver) {
+        driver = webDriver;
     }
 
     public String getURL() {
-        return this.driver.getCurrentUrl();
+        return driver.getCurrentUrl();
     }
 }

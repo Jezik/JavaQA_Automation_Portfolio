@@ -19,8 +19,7 @@ public class LoginPage extends BasePage {
     private WebElement signupButton;
 
     public LoginPage() {
-        super();
-        PageFactory.initElements(this.driver, this);
+        PageFactory.initElements(driver, this);
     }
 
     public WebElement getRegistrationHeader() {
