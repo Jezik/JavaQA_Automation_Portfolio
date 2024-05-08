@@ -3,6 +3,7 @@ package pageObjects;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import testDataTypes.MockUser;
 
 public class LoginPage extends BasePage {
 
@@ -26,9 +27,9 @@ public class LoginPage extends BasePage {
         return this.registrationHeader;
     }
 
-    public void registerNewUser(String username, String email) {
-        inputNewName.sendKeys(username);
-        inputNewEmail.sendKeys(email);
+    public void registerNewUser(MockUser user) {
+        inputNewName.sendKeys(user.username);
+        inputNewEmail.sendKeys(user.email);
         signupButton.click();
     }
 }

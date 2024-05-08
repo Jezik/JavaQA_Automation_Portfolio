@@ -1,6 +1,5 @@
 package pageObjects;
 
-import dataProviders.PropertiesFileReader;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -14,8 +13,8 @@ public class MainPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    public void openMainPage() {
-        driver.get(new PropertiesFileReader().getBaseURL());
+    public void openMainPage(String url) {
+        driver.get(url);
     }
 
     public void goToLoginPage() {

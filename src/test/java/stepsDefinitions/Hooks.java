@@ -1,15 +1,12 @@
 package stepsDefinitions;
 
-import dataProviders.PropertiesFileReader;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import managers.FileReaderManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pageObjects.BasePage;
-
-import java.time.Duration;
-
 
 public class Hooks {
     public static WebDriver driver;
@@ -19,8 +16,7 @@ public class Hooks {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(new PropertiesFileReader().getImplicitlyWaitSeconds()));
-        BasePage.setDriver(driver);
+        BasePage.setDriver(driver, FileReaderManager.getPropertiesFileReader().getImplicitlyWaitSeconds());
     }
 
     @After

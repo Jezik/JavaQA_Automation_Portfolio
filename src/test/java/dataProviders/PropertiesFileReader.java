@@ -8,7 +8,7 @@ public class PropertiesFileReader {
     private Properties properties;
 
     public PropertiesFileReader() {
-        String propertiesFilePath = new File("").getAbsolutePath() + "\\src\\test\\resources\\configs\\application.properties";
+        String propertiesFilePath = new File("").getAbsolutePath().concat("\\src\\test\\resources\\configs\\application.properties");
         try {
             BufferedReader reader = new BufferedReader(new FileReader(propertiesFilePath));
             properties = new Properties();
