@@ -58,4 +58,22 @@ public class PropertiesFileReader {
             throw new RuntimeException("implicitlyWaitInSeconds property is not specified in the application.properties file");
         }
     }
+
+    public String getAccountCreatedPageURL() {
+        String accountCreatedPageURL = properties.getProperty("accountCreatedPageURL");
+        if (accountCreatedPageURL != null) {
+            return accountCreatedPageURL;
+        } else {
+            throw new RuntimeException("accountCreatedPageURL property is not specified in the application.properties file");
+        }
+    }
+
+    public String getAccountDeletedPageURL() {
+        String accountDeletedPageURL = properties.getProperty("accountDeletedPageURL");
+        if (accountDeletedPageURL != null) {
+            return accountDeletedPageURL;
+        } else {
+            throw new RuntimeException("accountDeletedPageURL property is not specified in the application.properties file");
+        }
+    }
 }

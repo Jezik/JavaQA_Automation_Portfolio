@@ -1,13 +1,13 @@
 package managers;
 
-import pageObjects.LoginPage;
-import pageObjects.MainPage;
-import pageObjects.RegistrationPage;
+import pageObjects.*;
 
 public class PageObjectManager {
     private MainPage mainPage;
     private LoginPage loginPage;
     private RegistrationPage registrationPage;
+    private AccountCreatedPage accountCreatedPage;
+    private AccountDeletedPage accountDeletedPage;
 
     public PageObjectManager() {}
 
@@ -21,5 +21,13 @@ public class PageObjectManager {
 
     public RegistrationPage getRegistrationPage() {
         return (registrationPage == null) ? registrationPage = new RegistrationPage() : registrationPage;
+    }
+
+    public AccountCreatedPage getAccountCreatedPage() {
+        return (accountCreatedPage == null) ? accountCreatedPage = new AccountCreatedPage() : accountCreatedPage;
+    }
+
+    public AccountDeletedPage getAccountDeletedPage() {
+        return (accountDeletedPage == null) ? accountDeletedPage = new AccountDeletedPage() : accountDeletedPage;
     }
 }

@@ -9,6 +9,9 @@ public class MainPage extends BasePage {
     @FindBy(xpath = "//a[@href='/login']")
     private WebElement loginLink;
 
+    @FindBy(xpath = "//a[@href='/delete_account']")
+    private WebElement deleteAccount;
+
     public MainPage() {
         PageFactory.initElements(driver, this);
     }
@@ -19,5 +22,13 @@ public class MainPage extends BasePage {
 
     public void goToLoginPage() {
         this.loginLink.click();
+    }
+
+    public WebElement getDeleteAccount() {
+        return this.deleteAccount;
+    }
+
+    public void removeAccount() {
+        this.deleteAccount.click();
     }
 }
